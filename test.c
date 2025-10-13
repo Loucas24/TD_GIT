@@ -1,22 +1,16 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(int argc, char const *argv[])
 {
-    int seconde = 0;
-    int heure = 0;
-    int minute = 0;
-    scanf("%d",&seconde);
-    while (seconde > 3600)
-    {
-        heure = heure + 1;
-        seconde = seconde - 3600;
-    }
-    while (seconde > 60)
-    {
-        minute = minute + 1;
-        seconde = seconde - 60;
-    }
-    
-    printf("%d secondes = %d heures, %d minutes et %d secondes" , heure,minute,seconde);
+    float c = 0;
+    float n = 0;
+    float t = 0;
+    scanf("%f",&c);
+    scanf("%f",&n);
+    scanf("%f",&t);
+    t = t/100;
+    float m = (c*(t/12))/(1-pow(1+(t/12),-n*12));
+    printf("%f",m);
     return 0;
 }
